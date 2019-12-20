@@ -14,12 +14,25 @@
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- https://mvnrepository.com/artifact/org.springframework/spring-framework-bom -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>5.2.2.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>${org.springframework-version}</version>
 			<exclusions>
 				<!-- Exclude Commons Logging in favor of SLF4j -->
 				<exclusion>
@@ -31,7 +44,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>${org.springframework-version}</version>
 		</dependency>
 
 		<!-- AspectJ -->
@@ -143,6 +155,74 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>1.3.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+		</dependency>
+
+		<!-- Spring WebSocket -->
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-websocket</artifactId> 
+			<version>4.2.4.RELEASE</version> </dependency> -->
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-websocket</artifactId> 
+			<version>5.2.2.RELEASE</version> </dependency> -->
+
+		<!-- WebSocket API -->
+		<dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
+			<version>1.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--STOMP messaging protocol을 위한것 -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-messaging -->
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-messaging</artifactId> 
+			<version>5.2.0.RELEASE</version> </dependency> -->
+
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator-core</artifactId>
+			<version>0.37</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>sockjs-client</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>stomp-websocket</artifactId>
+			<version>2.3.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.1.0</version>
 		</dependency>
 	</dependencies>
 	<build>
