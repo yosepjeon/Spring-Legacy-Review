@@ -1,5 +1,11 @@
 package com.yosep.spring.aop;
 
-public class MyAspect {
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
 
+@Aspect
+@Component
+public class MyAspect {
+	
 }
